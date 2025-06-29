@@ -1,0 +1,88 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.content {
+  flex: 1;
+  padding: var(--spacing-4);
+  background-color: var(--gray-50);
+  transition: background-color 0.3s ease;
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .content {
+    padding: var(--spacing-3);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .content {
+    padding: var(--spacing-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: var(--spacing-2) var(--spacing-1);
+  }
+}
+
+/* Ensure content containers are responsive */
+.content > * {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Handle wide tables and content */
+.content table,
+.content .table-container {
+  min-width: 100%;
+  overflow-x: auto;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 768px) {
+  .content .grid-cols-2,
+  .content .grid-cols-3,
+  .content .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .content .md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .content .lg\:grid-cols-3,
+  .content .lg\:grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .content .flex {
+    flex-direction: column;
+  }
+  
+  .content .justify-between {
+    justify-content: flex-start;
+    gap: var(--spacing-2);
+  }
+}
