@@ -1,5 +1,7 @@
 .theme-toggle {
   position: relative;
+  
+  
 }
 
 .theme-options {
@@ -8,6 +10,9 @@
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-1);
   gap: var(--spacing-1);
+ 
+  
+  
 }
 
 [data-theme="dark"] .theme-options {
@@ -15,6 +20,7 @@
 }
 
 .theme-option {
+  /* max-width: 10px; */
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
@@ -29,6 +35,9 @@
   color: var(--gray-600);
   white-space: nowrap;
   min-width: 0;
+  height: 30px;
+  
+  
 }
 
 .theme-option:hover {
@@ -38,16 +47,22 @@
 
 [data-theme="dark"] .theme-option:hover {
   background: var(--gray-300);
+  height: 30px;
 }
 
 .theme-option.active {
   background: var(--primary-500);
   color: white;
   box-shadow: var(--shadow);
+  
 }
 
 .theme-label {
   font-size: 0.75rem;
+  height: 30px;
+  text-align: center;
+  justify-content: center;
+  
 }
 
 /* Mobile responsive adjustments */
@@ -118,6 +133,7 @@
   font-weight: 500;
   color: var(--gray-700);
 }
+
 
 [data-theme="dark"] .settings-panel .theme-label {
   border-color: var(--gray-300);
